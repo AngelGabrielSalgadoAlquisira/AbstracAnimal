@@ -1,28 +1,34 @@
 package Arreglos;
 
+import java.util.Arrays;
+
+
 public class Sumatoria {
-
     public void suma(){
-        int[]numeros ={78,78,90};
+        int [] numeros = { 50, 10,15,5};
         int [] ordenados = numeros;
-        int sumatoria= 0;
-        double media = 0;
+        int sumatoria = 0;
+        double media=0;
 
 
-        double mediana = (ordenados[numeros.length/2]);
+        Arrays.sort(ordenados);
 
-        System.out.println("Estos son los numeros: ");
 
-        for(int i=0;i< numeros.length;i++){
-            System.out.println( numeros[i]);
+
+        double mediana = (ordenados[numeros.length/2]+ordenados[(numeros.length/2)-1])/2;
+
+        for (int i = 0;i<numeros.length;i++){
+            sumatoria = sumatoria + numeros [i];
         }
 
-        for(int i=0;i< numeros.length; i++){
-            sumatoria = sumatoria + numeros[i];
-            mediana = (double) sumatoria / numeros[i];
-        }
+        media =(double) sumatoria/ numeros.length;
 
-        System.out.println("la suma es: "+sumatoria);
-        System.out.println("El promedio es: " +mediana);
+
+        System.out.println("Se sumaron "+numeros.length+ "Elementos");
+        System.out.println("La sumatoria de los elementos del arreglo es: "+ sumatoria);
+        System.out.println(" Los elementos del arreglo ordenados son: "+Arrays.toString(ordenados));
+        System.out.println("la mediana es: "+mediana);
+        System.out.println("media:"+media);
     }
+
 }
